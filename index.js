@@ -23,5 +23,4 @@ async function run() {
   }
   console.log('I wanna log !');
 }
-
 setInterval(run().catch(console.dir),2000)
