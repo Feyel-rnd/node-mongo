@@ -15,13 +15,14 @@ async function run() {
 
     // Establish and verify connection
     await client.db("Data").command({ ping: 1 });
+    await client.db("Data").collection("users").insertOne({ ping: 1 });
     console.log("Connected successfully to server");
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
   }
 }
-setInterval(run().catch(console.dir),2000)
+setInterval(run,4000)
 
 
 
