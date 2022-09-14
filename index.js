@@ -16,6 +16,7 @@ async function run() {
     await mongo.db('Data').command({ ping: 1 });
     console.log('Connected successfully to server');
   } finally {
+    console.log("closed")
     // Ensures that the client will close when you finish/error
     await client.close();
   }
