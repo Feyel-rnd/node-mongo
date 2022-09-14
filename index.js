@@ -6,14 +6,14 @@ const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 const uri =
   'mongodb+srv://App:MyDbPassword@cluster0.fx8cutv.mongodb.net/?retryWrites=true&w=majority';
-const mongo = new MongoClient(uri); //, {  useUnifiedTopology: true, connectTimeoutMS: 20000, useNewUrlParser: true});
+const mongo = new MongoClient(uri, {  useUnifiedTopology: true, connectTimeoutMS: 20000, useNewUrlParser: true});
 
 async function run() {
   try {
     // Connect the client to the server (optional starting in v4.7)
     await mongo.connect();
     // Establish and verify connection
-    await mongo.db('Data').command({ ping: 1 });
+    await mongo.db('admin').command({ ping: 1 });
     console.log('Connected successfully to server');
   } finally {
     console.log("closed")
