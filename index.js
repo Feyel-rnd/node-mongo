@@ -21,7 +21,8 @@ async function run() {
     await client.close();
   }
 }
-run().catch(console.dir);
+setInterval(run().catch(console.dir),2000)
+
 
 
 
