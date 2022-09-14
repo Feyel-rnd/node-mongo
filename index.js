@@ -2,8 +2,8 @@
 const { MongoClient } = require("mongodb");
 
 // Connection URI
-const uri =
-  "mongodb+srv://App:MyDbPassword@cluster0.fx8cutv.mongodb.net/?retryWrites=true&w=majority";
+const uri ="mongodb+srv://sample-hostname:27017/?maxPoolSize=20&w=majority"//
+  //"mongodb+srv://App:MyDbPassword@cluster0.fx8cutv.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a new MongoClient
 const client = new MongoClient(uri);
