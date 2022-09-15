@@ -12,7 +12,9 @@ const uri = "mongodb+srv://App:MyDbPassword@cluster0.fx8cutv.mongodb.net/?retryW
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
+  setInterval(() =>{
+    collection.insertOne({glo:"hello !"})
+  },10000)
   client.close();
 });
 
