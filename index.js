@@ -15,7 +15,7 @@ client.connect(err => {
   setInterval(() =>{
     collection.insertOne({glo:"hello !"})
   },10000)
-  client.close();
+  //client.close();
 });
 
 
